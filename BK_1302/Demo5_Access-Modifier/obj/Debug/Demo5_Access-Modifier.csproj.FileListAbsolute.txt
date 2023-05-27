@@ -1,0 +1,8 @@
+D:\C Sharp\BK_1302\Demo5_Access-Modifier\bin\Debug\Demo5_Access-Modifier.exe.config
+D:\C Sharp\BK_1302\Demo5_Access-Modifier\bin\Debug\Demo5_Access-Modifier.exe
+D:\C Sharp\BK_1302\Demo5_Access-Modifier\bin\Debug\Demo5_Access-Modifier.pdb
+D:\C Sharp\BK_1302\Demo5_Access-Modifier\obj\Debug\Demo5_Access-Modifier.csproj.AssemblyReference.cache
+D:\C Sharp\BK_1302\Demo5_Access-Modifier\obj\Debug\Demo5_Access-Modifier.csproj.SuggestedBindingRedirects.cache
+D:\C Sharp\BK_1302\Demo5_Access-Modifier\obj\Debug\Demo5_Access-Modifier.csproj.CoreCompileInputs.cache
+D:\C Sharp\BK_1302\Demo5_Access-Modifier\obj\Debug\Demo5_Access-Modifier.exe
+D:\C Sharp\BK_1302\Demo5_Access-Modifier\obj\Debug\Demo5_Access-Modifier.pdb

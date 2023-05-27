@@ -1,0 +1,8 @@
+D:\C Sharp\BK_1302\CSharp1\bin\Debug\CSharp1.exe.config
+D:\C Sharp\BK_1302\CSharp1\bin\Debug\CSharp1.exe
+D:\C Sharp\BK_1302\CSharp1\bin\Debug\CSharp1.pdb
+D:\C Sharp\BK_1302\CSharp1\obj\Debug\CSharp1.csproj.AssemblyReference.cache
+D:\C Sharp\BK_1302\CSharp1\obj\Debug\CSharp1.csproj.SuggestedBindingRedirects.cache
+D:\C Sharp\BK_1302\CSharp1\obj\Debug\CSharp1.csproj.CoreCompileInputs.cache
+D:\C Sharp\BK_1302\CSharp1\obj\Debug\CSharp1.exe
+D:\C Sharp\BK_1302\CSharp1\obj\Debug\CSharp1.pdb

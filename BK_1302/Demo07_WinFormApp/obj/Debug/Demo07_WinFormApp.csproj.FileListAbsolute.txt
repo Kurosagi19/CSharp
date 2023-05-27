@@ -1,0 +1,11 @@
+D:\C Sharp\BK_1302\Demo07_WinFormApp\bin\Debug\Demo07_WinFormApp.exe.config
+D:\C Sharp\BK_1302\Demo07_WinFormApp\bin\Debug\Demo07_WinFormApp.exe
+D:\C Sharp\BK_1302\Demo07_WinFormApp\bin\Debug\Demo07_WinFormApp.pdb
+D:\C Sharp\BK_1302\Demo07_WinFormApp\obj\Debug\Demo07_WinFormApp.csproj.AssemblyReference.cache
+D:\C Sharp\BK_1302\Demo07_WinFormApp\obj\Debug\Demo07_WinFormApp.csproj.SuggestedBindingRedirects.cache
+D:\C Sharp\BK_1302\Demo07_WinFormApp\obj\Debug\Demo07_WinFormApp.Properties.Resources.resources
+D:\C Sharp\BK_1302\Demo07_WinFormApp\obj\Debug\Demo07_WinFormApp.csproj.GenerateResource.cache
+D:\C Sharp\BK_1302\Demo07_WinFormApp\obj\Debug\Demo07_WinFormApp.csproj.CoreCompileInputs.cache
+D:\C Sharp\BK_1302\Demo07_WinFormApp\obj\Debug\Demo07_WinFormApp.exe
+D:\C Sharp\BK_1302\Demo07_WinFormApp\obj\Debug\Demo07_WinFormApp.pdb
+D:\C Sharp\BK_1302\Demo07_WinFormApp\obj\Debug\Demo07_WinFormApp.MainTitle.resources
