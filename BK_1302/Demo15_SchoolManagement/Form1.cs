@@ -31,7 +31,7 @@ namespace Demo15_SchoolManagement
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void lbSchoolName_Click(object sender, EventArgs e)
         {
 
         }
@@ -81,7 +81,7 @@ namespace Demo15_SchoolManagement
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close();  
         }
     }
 }
