@@ -21,8 +21,9 @@ namespace Demo15_SchoolManagement
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            txtTeacherName.Enabled = false;
+            txtTeacherNum.Enabled = false;
             txtSchoolName.Enabled = false;
+            txtStudentNum.Enabled = false;
             btnSave.Enabled = false;
             btnCancel.Enabled = false;
 
@@ -41,8 +42,9 @@ namespace Demo15_SchoolManagement
             // Đổi tên cột
             dtgSchool.Columns[0].HeaderText = "ID";
             dtgSchool.Columns[1].HeaderText = "School Name";
-            dtgSchool.Columns[2].HeaderText = "Teacher Name";
-
+            dtgSchool.Columns[2].HeaderText = "Teacher Number";
+            dtgSchool.Columns[3].HeaderText = "Student Number";
+            // Kích cỡ cột tự động
             dtgSchool.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
             SqlCommand command = new SqlCommand(sql, con);
@@ -71,8 +73,10 @@ namespace Demo15_SchoolManagement
             btnCancel.Enabled = true;
             txtSchoolName.Enabled = true;
             txtSchoolName.Text = "";
-            txtTeacherName.Enabled = true;
-            txtTeacherName.Text = "";
+            txtTeacherNum.Enabled = true;
+            txtTeacherNum.Text = "";
+            txtStudentNum.Enabled = true;
+            txtStudentNum.Text = "";
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -81,14 +85,15 @@ namespace Demo15_SchoolManagement
             btnSave.Enabled = false;
             btnCancel.Enabled = false;
             txtSchoolName.Enabled = false;
-            txtTeacherName.Enabled = false;
+            txtTeacherNum.Enabled = false;
+            txtStudentNum.Enabled = false;
 
             // Lưu dữ liệu vào database
             string strCon = "Server = Kurosagi19; Database = C1302; Trusted_Connection = true";
             SqlConnection con = new SqlConnection(strCon);
             con.Open();
 
-            string sql = "INSERT INTO school (school_name) VALUES ('"+ txtSchoolName.Text +"')";
+            string sql = "INSERT INTO school (id, school_name, teacher_num, student_num) VALUES ('"+ txtID.Text +"', '"+ txtSchoolName.Text +"', '"+ txtTeacherNum.Text +"', '"+ txtStudentNum.Text +"')";
 
             SqlCommand command = new SqlCommand(sql, con);
             command.ExecuteNonQuery();
@@ -100,8 +105,8 @@ namespace Demo15_SchoolManagement
             btnAdd.Enabled = true;
             btnSave.Enabled = false;
             btnCancel.Enabled = false;
-            txtTeacherName.Enabled = false;
-            txtTeacherName.Text = "";
+            txtTeacherNum.Enabled = false;
+            txtTeacherNum.Text = "";
             txtSchoolName.Enabled = false;
             txtSchoolName.Text = "";
         }
@@ -117,15 +122,21 @@ namespace Demo15_SchoolManagement
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string strCon = "Server = Kurosagi19; Database = C1302; Trusted_Connection = true";
-            SqlConnection con = new SqlConnection(strCon);
-            con.Open();
+            if(txtID.Text == "")
+            {
+                MessageBox.Show("Please input ID");
+            } else
+            {
+                string strCon = "Server = Kurosagi19; Database = C1302; Trusted_Connection = true";
+                SqlConnection con = new SqlConnection(strCon);
+                con.Open();
 
-            string sql = "DELETE FROM school WHERE id = "+txtID.Text+"";
+                string sql = "DELETE FROM school WHERE id = " + txtID.Text + "";
 
-            SqlCommand command = new SqlCommand(sql, con);
-            command.ExecuteNonQuery();
-            MessageBox.Show("Deleted !", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                SqlCommand command = new SqlCommand(sql, con);
+                command.ExecuteNonQuery();
+                MessageBox.Show("Deleted !", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void dtgSchool_SelectionChanged(object sender, EventArgs e)

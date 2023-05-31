@@ -35,13 +35,15 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.lbTeacherName = new System.Windows.Forms.Label();
-            this.txtTeacherName = new System.Windows.Forms.TextBox();
+            this.lbTeacherNum = new System.Windows.Forms.Label();
+            this.txtTeacherNum = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.dtgSchool = new System.Windows.Forms.DataGridView();
             this.lbID = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.lbStudentNum = new System.Windows.Forms.Label();
+            this.txtStudentNum = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgSchool)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,23 +124,23 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // lbTeacherName
+            // lbTeacherNum
             // 
-            this.lbTeacherName.AutoSize = true;
-            this.lbTeacherName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTeacherName.Location = new System.Drawing.Point(15, 342);
-            this.lbTeacherName.Name = "lbTeacherName";
-            this.lbTeacherName.Size = new System.Drawing.Size(137, 24);
-            this.lbTeacherName.TabIndex = 7;
-            this.lbTeacherName.Text = "Teacher Name";
+            this.lbTeacherNum.AutoSize = true;
+            this.lbTeacherNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTeacherNum.Location = new System.Drawing.Point(15, 342);
+            this.lbTeacherNum.Name = "lbTeacherNum";
+            this.lbTeacherNum.Size = new System.Drawing.Size(127, 24);
+            this.lbTeacherNum.TabIndex = 7;
+            this.lbTeacherNum.Text = "Teacher Num";
             // 
-            // txtTeacherName
+            // txtTeacherNum
             // 
-            this.txtTeacherName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTeacherName.Location = new System.Drawing.Point(146, 342);
-            this.txtTeacherName.Name = "txtTeacherName";
-            this.txtTeacherName.Size = new System.Drawing.Size(150, 26);
-            this.txtTeacherName.TabIndex = 8;
+            this.txtTeacherNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTeacherNum.Location = new System.Drawing.Point(146, 342);
+            this.txtTeacherNum.Name = "txtTeacherNum";
+            this.txtTeacherNum.Size = new System.Drawing.Size(150, 26);
+            this.txtTeacherNum.TabIndex = 8;
             // 
             // btnDelete
             // 
@@ -174,7 +176,7 @@
             // txtID
             // 
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(357, 342);
+            this.txtID.Location = new System.Drawing.Point(448, 342);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(150, 26);
             this.txtID.TabIndex = 13;
@@ -190,18 +192,38 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // lbStudentNum
+            // 
+            this.lbStudentNum.AutoSize = true;
+            this.lbStudentNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStudentNum.Location = new System.Drawing.Point(324, 310);
+            this.lbStudentNum.Name = "lbStudentNum";
+            this.lbStudentNum.Size = new System.Drawing.Size(120, 24);
+            this.lbStudentNum.TabIndex = 15;
+            this.lbStudentNum.Text = "Student Num";
+            // 
+            // txtStudentNum
+            // 
+            this.txtStudentNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStudentNum.Location = new System.Drawing.Point(448, 308);
+            this.txtStudentNum.Name = "txtStudentNum";
+            this.txtStudentNum.Size = new System.Drawing.Size(150, 26);
+            this.txtStudentNum.TabIndex = 16;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtStudentNum);
+            this.Controls.Add(this.lbStudentNum);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.lbID);
             this.Controls.Add(this.dtgSchool);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.txtTeacherName);
-            this.Controls.Add(this.lbTeacherName);
+            this.Controls.Add(this.txtTeacherNum);
+            this.Controls.Add(this.lbTeacherNum);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
@@ -227,13 +249,15 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Label lbTeacherName;
-        private System.Windows.Forms.TextBox txtTeacherName;
+        private System.Windows.Forms.Label lbTeacherNum;
+        private System.Windows.Forms.TextBox txtTeacherNum;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DataGridView dtgSchool;
         private System.Windows.Forms.Label lbID;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Label lbStudentNum;
+        private System.Windows.Forms.TextBox txtStudentNum;
     }
 }
 
