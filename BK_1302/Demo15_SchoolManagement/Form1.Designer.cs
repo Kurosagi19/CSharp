@@ -38,8 +38,10 @@
             this.lbTeacherName = new System.Windows.Forms.Label();
             this.txtTeacherName = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.cbbChoose = new System.Windows.Forms.ComboBox();
             this.dtgSchool = new System.Windows.Forms.DataGridView();
+            this.lbID = new System.Windows.Forms.Label();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgSchool)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,7 +79,7 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(19, 371);
+            this.btnAdd.Location = new System.Drawing.Point(19, 403);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 35);
             this.btnAdd.TabIndex = 3;
@@ -88,7 +90,7 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(100, 371);
+            this.btnSave.Location = new System.Drawing.Point(291, 403);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 35);
             this.btnSave.TabIndex = 4;
@@ -99,7 +101,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(269, 371);
+            this.btnCancel.Location = new System.Drawing.Point(573, 403);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(82, 35);
             this.btnCancel.TabIndex = 5;
@@ -109,13 +111,15 @@
             // 
             // btnExit
             // 
+            this.btnExit.BackColor = System.Drawing.Color.Red;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(357, 371);
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Location = new System.Drawing.Point(706, 403);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(82, 35);
             this.btnExit.TabIndex = 6;
             this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // lbTeacherName
@@ -139,7 +143,7 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(181, 371);
+            this.btnDelete.Location = new System.Drawing.Point(156, 403);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(82, 35);
             this.btnDelete.TabIndex = 9;
@@ -147,44 +151,54 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // cbbChoose
-            // 
-            this.cbbChoose.FormattingEnabled = true;
-            this.cbbChoose.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10"});
-            this.cbbChoose.Location = new System.Drawing.Point(340, 342);
-            this.cbbChoose.Name = "cbbChoose";
-            this.cbbChoose.Size = new System.Drawing.Size(132, 21);
-            this.cbbChoose.TabIndex = 10;
-            this.cbbChoose.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
             // dtgSchool
             // 
             this.dtgSchool.AllowUserToAddRows = false;
             this.dtgSchool.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgSchool.Location = new System.Drawing.Point(56, 49);
             this.dtgSchool.Name = "dtgSchool";
-            this.dtgSchool.Size = new System.Drawing.Size(662, 178);
+            this.dtgSchool.Size = new System.Drawing.Size(662, 206);
             this.dtgSchool.TabIndex = 11;
-            this.dtgSchool.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgSchool_CellClick);
             this.dtgSchool.SelectionChanged += new System.EventHandler(this.dtgSchool_SelectionChanged);
+            // 
+            // lbID
+            // 
+            this.lbID.AutoSize = true;
+            this.lbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbID.Location = new System.Drawing.Point(324, 344);
+            this.lbID.Name = "lbID";
+            this.lbID.Size = new System.Drawing.Size(27, 24);
+            this.lbID.TabIndex = 12;
+            this.lbID.Text = "ID";
+            // 
+            // txtID
+            // 
+            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.Location = new System.Drawing.Point(357, 342);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(150, 26);
+            this.txtID.TabIndex = 13;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.Location = new System.Drawing.Point(421, 403);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(86, 35);
+            this.btnRefresh.TabIndex = 14;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.txtID);
+            this.Controls.Add(this.lbID);
             this.Controls.Add(this.dtgSchool);
-            this.Controls.Add(this.cbbChoose);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.txtTeacherName);
             this.Controls.Add(this.lbTeacherName);
@@ -196,7 +210,7 @@
             this.Controls.Add(this.lbSchoolName);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "BKM School Management System";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgSchool)).EndInit();
             this.ResumeLayout(false);
@@ -216,8 +230,10 @@
         private System.Windows.Forms.Label lbTeacherName;
         private System.Windows.Forms.TextBox txtTeacherName;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.ComboBox cbbChoose;
         private System.Windows.Forms.DataGridView dtgSchool;
+        private System.Windows.Forms.Label lbID;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
 

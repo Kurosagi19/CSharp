@@ -26,19 +26,19 @@ namespace Demo15_SchoolManagement
             btnSave.Enabled = false;
             btnCancel.Enabled = false;
 
-            // Save to Database
+            // Kết nối với database
             string strCon = "Server = Kurosagi19; Database = C1302; Trusted_Connection = true";
             SqlConnection con = new SqlConnection(strCon);
             con.Open();
 
-            // Show data from Database to WinForm
+            // Hiển thị dữ liệu từ database ra windows form
             string sql = "SELECT * FROM school";
             SqlDataAdapter da = new SqlDataAdapter(sql, strCon);
             DataSet ds = new DataSet();
             da.Fill(ds, "school");
             dtgSchool.DataSource = ds.Tables["school"].DefaultView;
 
-            // Change column name
+            // Đổi tên cột
             dtgSchool.Columns[0].HeaderText = "ID";
             dtgSchool.Columns[1].HeaderText = "School Name";
             dtgSchool.Columns[2].HeaderText = "Teacher Name";
@@ -67,10 +67,12 @@ namespace Demo15_SchoolManagement
         private void btnAdd_Click(object sender, EventArgs e)
         {
             btnAdd.Enabled = false;
-            txtTeacherName.Enabled = true;
-            txtSchoolName.Enabled = true;
             btnSave.Enabled = true;
             btnCancel.Enabled = true;
+            txtSchoolName.Enabled = true;
+            txtSchoolName.Text = "";
+            txtTeacherName.Enabled = true;
+            txtTeacherName.Text = "";
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -78,20 +80,19 @@ namespace Demo15_SchoolManagement
             btnAdd.Enabled = true;
             btnSave.Enabled = false;
             btnCancel.Enabled = false;
+            txtSchoolName.Enabled = false;
+            txtTeacherName.Enabled = false;
 
-            // Save to Database
+            // Lưu dữ liệu vào database
             string strCon = "Server = Kurosagi19; Database = C1302; Trusted_Connection = true";
             SqlConnection con = new SqlConnection(strCon);
             con.Open();
 
-            string schoolName = txtSchoolName.Text;
-            string sql = "INSERT INTO school (school_name) VALUES ('"+ schoolName +"')";
-            //string sql = "UPDATE school SET school_name = 'School 2' WHERE id = 1";
-            //string sql = "DELETE FROM school WHERE id = 1";
+            string sql = "INSERT INTO school (school_name) VALUES ('"+ txtSchoolName.Text +"')";
 
             SqlCommand command = new SqlCommand(sql, con);
             command.ExecuteNonQuery();
-            MessageBox.Show("Add successful !", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Added !", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -107,7 +108,7 @@ namespace Demo15_SchoolManagement
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Do your parents know u r gay?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+            DialogResult result = MessageBox.Show("Exit?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
             if (result == DialogResult.Yes)
             {
                 this.Close();
@@ -120,52 +121,38 @@ namespace Demo15_SchoolManagement
             SqlConnection con = new SqlConnection(strCon);
             con.Open();
 
-            //string schoolName = txtSchoolName.Text;
-            //string sql = "INSERT INTO school (school_name) VALUES ('" + schoolName + "')";
-            //string sql = "UPDATE school SET school_name = 'School 2' WHERE id = 1";
-            string sql = "DELETE FROM school WHERE id = 1";
+            string sql = "DELETE FROM school WHERE id = "+txtID.Text+"";
 
             SqlCommand command = new SqlCommand(sql, con);
             command.ExecuteNonQuery();
             MessageBox.Show("Deleted !", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void dtgSchool_SelectionChanged(object sender, EventArgs e)
         {
-
+            string schoolName = dtgSchool.Rows[0].Cells["school_name"].Value.ToString();
+            txtSchoolName.Text = schoolName;
+            string iD = dtgSchool.Rows[0].Cells["id"].Value.ToString();
+            txtID.Text = iD;
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
-            // Save to Database
             string strCon = "Server = Kurosagi19; Database = C1302; Trusted_Connection = true";
             SqlConnection con = new SqlConnection(strCon);
             con.Open();
 
             string sql = "SELECT * FROM school";
-            //string schoolName = txtSchoolName.Text;
-            //string sql = "INSERT INTO school (school_name) VALUES ('" + schoolName + "')";
-            //string sql = "UPDATE school SET school_name = 'School 2' WHERE id = 1";
-            //string sql = "DELETE FROM school WHERE id = 1";
+
+            SqlDataAdapter da = new SqlDataAdapter(sql, strCon);
+            DataSet ds = new DataSet();
+            da.Fill(ds, "school");
+            dtgSchool.DataSource = ds.Tables["school"].DefaultView;
+
 
             SqlCommand command = new SqlCommand(sql, con);
             command.ExecuteNonQuery();
-        }
-
-        private void dtgSchool_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dtgSchool_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
-        private void dtgSchool_SelectionChanged(object sender, EventArgs e)
-        {
-            string schoolName = dtgSchool.Rows[0].Cells["school_name"].Value.ToString();
-            txtSchoolName.Text = schoolName;
+            MessageBox.Show("Refreshed !", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
