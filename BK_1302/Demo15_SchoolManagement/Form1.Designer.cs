@@ -62,7 +62,7 @@
             // 
             this.lbSchoolName.AutoSize = true;
             this.lbSchoolName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSchoolName.Location = new System.Drawing.Point(15, 310);
+            this.lbSchoolName.Location = new System.Drawing.Point(94, 323);
             this.lbSchoolName.Name = "lbSchoolName";
             this.lbSchoolName.Size = new System.Drawing.Size(125, 24);
             this.lbSchoolName.TabIndex = 1;
@@ -72,7 +72,7 @@
             // txtSchoolName
             // 
             this.txtSchoolName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSchoolName.Location = new System.Drawing.Point(146, 310);
+            this.txtSchoolName.Location = new System.Drawing.Point(225, 323);
             this.txtSchoolName.Name = "txtSchoolName";
             this.txtSchoolName.Size = new System.Drawing.Size(150, 26);
             this.txtSchoolName.TabIndex = 2;
@@ -128,7 +128,7 @@
             // 
             this.lbTeacherNum.AutoSize = true;
             this.lbTeacherNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTeacherNum.Location = new System.Drawing.Point(15, 342);
+            this.lbTeacherNum.Location = new System.Drawing.Point(94, 355);
             this.lbTeacherNum.Name = "lbTeacherNum";
             this.lbTeacherNum.Size = new System.Drawing.Size(127, 24);
             this.lbTeacherNum.TabIndex = 7;
@@ -137,7 +137,7 @@
             // txtTeacherNum
             // 
             this.txtTeacherNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTeacherNum.Location = new System.Drawing.Point(146, 342);
+            this.txtTeacherNum.Location = new System.Drawing.Point(225, 355);
             this.txtTeacherNum.Name = "txtTeacherNum";
             this.txtTeacherNum.Size = new System.Drawing.Size(150, 26);
             this.txtTeacherNum.TabIndex = 8;
@@ -156,6 +156,7 @@
             // dtgSchool
             // 
             this.dtgSchool.AllowUserToAddRows = false;
+            this.dtgSchool.BackgroundColor = System.Drawing.Color.White;
             this.dtgSchool.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgSchool.Location = new System.Drawing.Point(56, 49);
             this.dtgSchool.Name = "dtgSchool";
@@ -167,7 +168,7 @@
             // 
             this.lbID.AutoSize = true;
             this.lbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbID.Location = new System.Drawing.Point(324, 344);
+            this.lbID.Location = new System.Drawing.Point(403, 357);
             this.lbID.Name = "lbID";
             this.lbID.Size = new System.Drawing.Size(27, 24);
             this.lbID.TabIndex = 12;
@@ -176,7 +177,7 @@
             // txtID
             // 
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(448, 342);
+            this.txtID.Location = new System.Drawing.Point(527, 355);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(150, 26);
             this.txtID.TabIndex = 13;
@@ -196,7 +197,7 @@
             // 
             this.lbStudentNum.AutoSize = true;
             this.lbStudentNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStudentNum.Location = new System.Drawing.Point(324, 310);
+            this.lbStudentNum.Location = new System.Drawing.Point(403, 323);
             this.lbStudentNum.Name = "lbStudentNum";
             this.lbStudentNum.Size = new System.Drawing.Size(120, 24);
             this.lbStudentNum.TabIndex = 15;
@@ -205,7 +206,7 @@
             // txtStudentNum
             // 
             this.txtStudentNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStudentNum.Location = new System.Drawing.Point(448, 308);
+            this.txtStudentNum.Location = new System.Drawing.Point(527, 321);
             this.txtStudentNum.Name = "txtStudentNum";
             this.txtStudentNum.Size = new System.Drawing.Size(150, 26);
             this.txtStudentNum.TabIndex = 16;

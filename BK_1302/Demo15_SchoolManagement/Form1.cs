@@ -93,7 +93,7 @@ namespace Demo15_SchoolManagement
             SqlConnection con = new SqlConnection(strCon);
             con.Open();
 
-            string sql = "INSERT INTO school (id, school_name, teacher_num, student_num) VALUES ('"+ txtID.Text +"', '"+ txtSchoolName.Text +"', '"+ txtTeacherNum.Text +"', '"+ txtStudentNum.Text +"')";
+            string sql = "INSERT INTO school (school_name, teacher_num, student_num) VALUES ('"+ txtSchoolName.Text +"', '"+ txtTeacherNum.Text +"', '"+ txtStudentNum.Text +"')";
 
             SqlCommand command = new SqlCommand(sql, con);
             command.ExecuteNonQuery();
@@ -139,12 +139,26 @@ namespace Demo15_SchoolManagement
             }
         }
 
+        //private int number = 0;
         private void dtgSchool_SelectionChanged(object sender, EventArgs e)
         {
             string schoolName = dtgSchool.Rows[0].Cells["school_name"].Value.ToString();
             txtSchoolName.Text = schoolName;
             string iD = dtgSchool.Rows[0].Cells["id"].Value.ToString();
             txtID.Text = iD;
+
+            try
+            {
+                DataGridViewRow row = this.dtgSchool.Rows[0];
+                string SchoolName = row.Cells["school_name"].Value.ToString();
+                MessageBox.Show(schoolName);
+            } catch (Exception ex)
+            {
+
+            }
+
+            //number++;
+            //MessageBox.Show("You have clicked 1 row in DataGridView " + number + " time");
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
