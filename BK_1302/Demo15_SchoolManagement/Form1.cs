@@ -19,14 +19,8 @@ namespace Demo15_SchoolManagement
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void loadData()
         {
-            txtTeacherNum.Enabled = false;
-            txtSchoolName.Enabled = false;
-            txtStudentNum.Enabled = false;
-            btnSave.Enabled = false;
-            btnCancel.Enabled = false;
-
             // Kết nối với database
             string strCon = "Server = Kurosagi19; Database = C1302; Trusted_Connection = true";
             SqlConnection con = new SqlConnection(strCon);
@@ -49,6 +43,19 @@ namespace Demo15_SchoolManagement
 
             SqlCommand command = new SqlCommand(sql, con);
             command.ExecuteNonQuery();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            loadData();
+
+            txtTeacherNum.Enabled = false;
+            txtSchoolName.Enabled = false;
+            txtStudentNum.Enabled = false;
+            btnSave.Enabled = false;
+            btnCancel.Enabled = false;
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -98,6 +105,8 @@ namespace Demo15_SchoolManagement
             SqlCommand command = new SqlCommand(sql, con);
             command.ExecuteNonQuery();
             MessageBox.Show("Added !", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            loadData();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -105,10 +114,16 @@ namespace Demo15_SchoolManagement
             btnAdd.Enabled = true;
             btnSave.Enabled = false;
             btnCancel.Enabled = false;
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
+            txtID.Enabled = false;
+            txtID.Text = "";
             txtTeacherNum.Enabled = false;
             txtTeacherNum.Text = "";
             txtSchoolName.Enabled = false;
             txtSchoolName.Text = "";
+            txtStudentNum.Enabled = false;
+            txtStudentNum.Text = "";
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -136,6 +151,8 @@ namespace Demo15_SchoolManagement
                 SqlCommand command = new SqlCommand(sql, con);
                 command.ExecuteNonQuery();
                 MessageBox.Show("Deleted !", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                loadData();
             }
         }
 
@@ -167,28 +184,35 @@ namespace Demo15_SchoolManagement
             //MessageBox.Show("You have clicked 1 row in DataGridView " + number + " time");
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private void dtgSchool_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            dtgSchool.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            btnCancel.Enabled = true;
+            btnUpdate.Enabled = true;
+
+            txtID.Enabled = true;
+            txtSchoolName.Enabled = true;
+            txtTeacherNum.Enabled = true;
+            txtStudentNum.Enabled = true;
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
             string strCon = "Server = Kurosagi19; Database = C1302; Trusted_Connection = true";
             SqlConnection con = new SqlConnection(strCon);
             con.Open();
 
-            string sql = "SELECT * FROM school";
-
-            SqlDataAdapter da = new SqlDataAdapter(sql, strCon);
-            DataSet ds = new DataSet();
-            da.Fill(ds, "school");
-            dtgSchool.DataSource = ds.Tables["school"].DefaultView;
-
+            string sql = $"UPDATE school SET school_name = '{txtSchoolName.Text}' WHERE id = {txtID.Text}";
 
             SqlCommand command = new SqlCommand(sql, con);
             command.ExecuteNonQuery();
-            MessageBox.Show("Refreshed !", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
+            MessageBox.Show("Updated !", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-        private void dtgSchool_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            dtgSchool.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            loadData();
         }
     }
 }

@@ -41,9 +41,10 @@
             this.dtgSchool = new System.Windows.Forms.DataGridView();
             this.lbID = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.lbStudentNum = new System.Windows.Forms.Label();
             this.txtStudentNum = new System.Windows.Forms.TextBox();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgSchool)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,7 +93,7 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(291, 403);
+            this.btnSave.Location = new System.Drawing.Point(470, 403);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 35);
             this.btnSave.TabIndex = 4;
@@ -103,7 +104,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(573, 403);
+            this.btnCancel.Location = new System.Drawing.Point(585, 403);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(82, 35);
             this.btnCancel.TabIndex = 5;
@@ -145,7 +146,7 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(156, 403);
+            this.btnDelete.Location = new System.Drawing.Point(358, 403);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(82, 35);
             this.btnDelete.TabIndex = 9;
@@ -183,17 +184,6 @@
             this.txtID.Size = new System.Drawing.Size(150, 26);
             this.txtID.TabIndex = 13;
             // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.Location = new System.Drawing.Point(421, 403);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(86, 35);
-            this.btnRefresh.TabIndex = 14;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
             // lbStudentNum
             // 
             this.lbStudentNum.AutoSize = true;
@@ -212,14 +202,37 @@
             this.txtStudentNum.Size = new System.Drawing.Size(150, 26);
             this.txtStudentNum.TabIndex = 16;
             // 
+            // btnEdit
+            // 
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(125, 403);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 35);
+            this.btnEdit.TabIndex = 17;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(237, 403);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(82, 35);
+            this.btnUpdate.TabIndex = 18;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.txtStudentNum);
             this.Controls.Add(this.lbStudentNum);
-            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.lbID);
             this.Controls.Add(this.dtgSchool);
@@ -257,9 +270,10 @@
         private System.Windows.Forms.DataGridView dtgSchool;
         private System.Windows.Forms.Label lbID;
         private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Label lbStudentNum;
         private System.Windows.Forms.TextBox txtStudentNum;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }
 
