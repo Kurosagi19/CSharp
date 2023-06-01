@@ -149,9 +149,15 @@ namespace Demo15_SchoolManagement
 
             try
             {
-                DataGridViewRow row = this.dtgSchool.Rows[0];
+                DataGridViewRow row = this.dtgSchool.SelectedRows[0];
+                string ID = row.Cells["id"].Value.ToString();
                 string SchoolName = row.Cells["school_name"].Value.ToString();
-                MessageBox.Show(schoolName);
+                string TeacherNum = row.Cells["teacher_num"].Value.ToString();
+                string StudentNum = row.Cells["student_num"].Value.ToString();
+                txtID.Text = ID;
+                txtSchoolName.Text = SchoolName;
+                txtTeacherNum.Text = TeacherNum;
+                txtStudentNum.Text = StudentNum;
             } catch (Exception ex)
             {
 
@@ -178,6 +184,11 @@ namespace Demo15_SchoolManagement
             SqlCommand command = new SqlCommand(sql, con);
             command.ExecuteNonQuery();
             MessageBox.Show("Refreshed !", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void dtgSchool_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            dtgSchool.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
     }
 }

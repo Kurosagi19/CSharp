@@ -50,10 +50,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(232, 9);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(262, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(310, 37);
+            this.label1.Size = new System.Drawing.Size(261, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "School Management";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -162,6 +162,7 @@
             this.dtgSchool.Name = "dtgSchool";
             this.dtgSchool.Size = new System.Drawing.Size(662, 206);
             this.dtgSchool.TabIndex = 11;
+            this.dtgSchool.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgSchool_CellMouseClick);
             this.dtgSchool.SelectionChanged += new System.EventHandler(this.dtgSchool_SelectionChanged);
             // 
             // lbID
