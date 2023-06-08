@@ -136,22 +136,22 @@ namespace Demo15_SchoolManagement
         //private int number = 0;
         private void dtgSchool_SelectionChanged(object sender, EventArgs e)
         {
-            string schoolName = dtgBuilding.Rows[0].Cells["school_name"].Value.ToString();
-            txtAddress.Text = schoolName;
-            string iD = dtgBuilding.Rows[0].Cells["id"].Value.ToString();
+            string buildingName = dtgBuilding.Rows[0].Cells["name"].Value.ToString();
+            txtAddress.Text = buildingName;
+            string iD = dtgBuilding.Rows[0].Cells["building_id"].Value.ToString();
             txtID.Text = iD;
 
             try
             {
                 DataGridViewRow row = this.dtgBuilding.SelectedRows[0];
-                string ID = row.Cells["id"].Value.ToString();
-                string SchoolName = row.Cells["school_name"].Value.ToString();
-                string TeacherNum = row.Cells["teacher_num"].Value.ToString();
-                string StudentNum = row.Cells["student_num"].Value.ToString();
+                string ID = row.Cells["building_id"].Value.ToString();
+                string BuildingName = row.Cells["name"].Value.ToString();
+                string Address = row.Cells["address"].Value.ToString();
+                string RoomQuantity = row.Cells["room_quantity"].Value.ToString();
                 txtID.Text = ID;
-                txtAddress.Text = SchoolName;
-                txtName.Text = TeacherNum;
-                txtRoomQuantity.Text = StudentNum;
+                txtName.Text = Name;
+                txtAddress.Text = Address;
+                txtRoomQuantity.Text = RoomQuantity;
             } catch (Exception ex)
             {
 
@@ -170,6 +170,7 @@ namespace Demo15_SchoolManagement
         {
             btnCancel.Enabled = true;
             btnUpdate.Enabled = true;
+            btnDelete.Enabled = true;
 
             txtID.Enabled = true;
             txtAddress.Enabled = true;
