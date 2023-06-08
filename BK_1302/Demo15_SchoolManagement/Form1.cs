@@ -86,29 +86,6 @@ namespace Demo15_SchoolManagement
             txtRoomQuantity.Text = "";
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            btnAdd.Enabled = true;
-            btnSave.Enabled = false;
-            btnCancel.Enabled = false;
-            txtAddress.Enabled = false;
-            txtName.Enabled = false;
-            txtRoomQuantity.Enabled = false;
-
-            // Lưu dữ liệu vào database
-            string strCon = "Server = Kurosagi19; Database = ASSIGNMENT; Trusted_Connection = true";
-            SqlConnection con = new SqlConnection(strCon);
-            con.Open();
-
-            string sql = "INSERT INTO building (name, address, room_quantity) VALUES ('"txtName.Text"', '"+ txtAddress.Text +"', '"+ txtRoomQuantity.Text +"')";    
-
-            SqlCommand command = new SqlCommand(sql, con);
-            command.ExecuteNonQuery();
-            MessageBox.Show("Added !", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            loadData();
-        }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             btnAdd.Enabled = true;
@@ -202,15 +179,30 @@ namespace Demo15_SchoolManagement
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            string strCon = "Server = Kurosagi19; Database = C1302; Trusted_Connection = true";
+            string strCon = "Server = Kurosagi19; Database = ASSIGNMENT; Trusted_Connection = true";
             SqlConnection con = new SqlConnection(strCon);
             con.Open();
 
-            string sql = $"UPDATE school SET school_name = '{txtAddress.Text}' WHERE id = {txtID.Text}";
+            string sql = $"UPDATE building SET building_name = '{txtName.Text}' WHERE building_id = {txtID.Text}";
 
             SqlCommand command = new SqlCommand(sql, con);
             command.ExecuteNonQuery();
             MessageBox.Show("Updated !", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            loadData();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            string strCon = "Server = Kurosagi19; Database = ASSIGNMENT; Trusted_Connection = true";
+            SqlConnection con = new SqlConnection(strCon);
+            con.Open();
+
+            string sql = "INSERT INTO building (name, address, room_quantity) VALUES ('"+txtName.Text+"', '"+txtAddress.Text+"', '"+txtRoomQuantity.Text+"')";
+
+            SqlCommand command = new SqlCommand(sql, con);
+            command.ExecuteNonQuery();
+            MessageBox.Show("Saved !", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             loadData();
         }

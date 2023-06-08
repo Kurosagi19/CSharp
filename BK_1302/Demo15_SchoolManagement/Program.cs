@@ -18,7 +18,7 @@ namespace Demo15_SchoolManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormComboBox());
+            Application.Run(new Form1());
         }
     }
 }
