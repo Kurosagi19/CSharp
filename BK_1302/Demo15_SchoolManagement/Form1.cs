@@ -114,7 +114,16 @@ namespace Demo15_SchoolManagement
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if(txtID.Text == "")
+            btnCancel.Enabled = false;
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
+
+            txtID.Enabled = false;
+            txtAddress.Enabled = false;
+            txtName.Enabled = false;
+            txtRoomQuantity.Enabled = false;
+
+            if (txtID.Text == "")
             {
                 MessageBox.Show("Please input ID");
             } else
@@ -180,11 +189,20 @@ namespace Demo15_SchoolManagement
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            btnCancel.Enabled = false;
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
+
+            txtID.Enabled = false;
+            txtAddress.Enabled = false;
+            txtName.Enabled = false;
+            txtRoomQuantity.Enabled = false;
+
             string strCon = "Server = Kurosagi19; Database = ASSIGNMENT; Trusted_Connection = true";
             SqlConnection con = new SqlConnection(strCon);
             con.Open();
 
-            string sql = $"UPDATE building SET building_name = '{txtName.Text}' WHERE building_id = {txtID.Text}";
+            string sql = $"UPDATE building SET name = '{txtName.Text}', address = '{txtAddress.Text}', room_quantity = {txtRoomQuantity.Text} WHERE building_id = {txtID.Text}";
 
             SqlCommand command = new SqlCommand(sql, con);
             command.ExecuteNonQuery();
@@ -195,6 +213,15 @@ namespace Demo15_SchoolManagement
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            btnCancel.Enabled = false;
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
+
+            txtID.Enabled = false;
+            txtAddress.Enabled = false;
+            txtName.Enabled = false;
+            txtRoomQuantity.Enabled = false;
+
             string strCon = "Server = Kurosagi19; Database = ASSIGNMENT; Trusted_Connection = true";
             SqlConnection con = new SqlConnection(strCon);
             con.Open();
