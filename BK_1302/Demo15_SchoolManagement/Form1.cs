@@ -52,6 +52,7 @@ namespace Demo15_SchoolManagement
             txtName.Enabled = false;
             txtAddress.Enabled = false;
             txtRoomQuantity.Enabled = false;
+            txtID.Enabled = false;
             btnSave.Enabled = false;
             btnCancel.Enabled = false;
             btnUpdate.Enabled = false;
@@ -78,6 +79,8 @@ namespace Demo15_SchoolManagement
             btnAdd.Enabled = false;
             btnSave.Enabled = true;
             btnCancel.Enabled = true;
+            txtID.Enabled = true;
+            txtID.Text = "";
             txtAddress.Enabled = true;
             txtAddress.Text = "";
             txtName.Enabled = true;
@@ -138,6 +141,11 @@ namespace Demo15_SchoolManagement
                 command.ExecuteNonQuery();
                 MessageBox.Show("Deleted !", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                txtID.Text = "";
+                txtName.Text = "";
+                txtAddress.Text = "";
+                txtRoomQuantity.Text = "";
+
                 loadData();
             }
         }
@@ -145,10 +153,10 @@ namespace Demo15_SchoolManagement
         //private int number = 0;
         private void dtgSchool_SelectionChanged(object sender, EventArgs e)
         {
-            string buildingName = dtgBuilding.Rows[0].Cells["name"].Value.ToString();
-            txtAddress.Text = buildingName;
-            string iD = dtgBuilding.Rows[0].Cells["building_id"].Value.ToString();
-            txtID.Text = iD;
+            //string buildingName = dtgBuilding.Rows[0].Cells["name"].Value.ToString();
+            //txtAddress.Text = buildingName;
+            //string iD = dtgBuilding.Rows[0].Cells["building_id"].Value.ToString();
+            //txtID.Text = iD;
 
             try
             {
@@ -158,7 +166,7 @@ namespace Demo15_SchoolManagement
                 string Address = row.Cells["address"].Value.ToString();
                 string RoomQuantity = row.Cells["room_quantity"].Value.ToString();
                 txtID.Text = ID;
-                txtName.Text = Name;
+                txtName.Text = BuildingName;
                 txtAddress.Text = Address;
                 txtRoomQuantity.Text = RoomQuantity;
             } catch (Exception ex)
@@ -213,6 +221,7 @@ namespace Demo15_SchoolManagement
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            btnSave.Enabled = false;
             btnCancel.Enabled = false;
             btnUpdate.Enabled = false;
             btnDelete.Enabled = false;
