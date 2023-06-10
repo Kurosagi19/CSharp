@@ -38,6 +38,7 @@ namespace Demo15_SchoolManagement
             dtgBuilding.Columns[1].HeaderText = "Building Name";
             dtgBuilding.Columns[2].HeaderText = "Address";
             dtgBuilding.Columns[3].HeaderText = "Room Quantity";
+
             // Kích cỡ cột tự động
             dtgBuilding.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
@@ -242,6 +243,12 @@ namespace Demo15_SchoolManagement
             MessageBox.Show("Saved !", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             loadData();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
         }
     }
 }

@@ -45,6 +45,7 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgBuilding)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +53,7 @@
             // 
             this.lbAddress.AutoSize = true;
             this.lbAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAddress.Location = new System.Drawing.Point(100, 227);
+            this.lbAddress.Location = new System.Drawing.Point(105, 260);
             this.lbAddress.Name = "lbAddress";
             this.lbAddress.Size = new System.Drawing.Size(80, 24);
             this.lbAddress.TabIndex = 1;
@@ -62,7 +63,7 @@
             // txtAddress
             // 
             this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.Location = new System.Drawing.Point(244, 227);
+            this.txtAddress.Location = new System.Drawing.Point(249, 260);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(137, 26);
             this.txtAddress.TabIndex = 2;
@@ -107,7 +108,7 @@
             // 
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(100, 259);
+            this.lbName.Location = new System.Drawing.Point(105, 292);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(61, 24);
             this.lbName.TabIndex = 7;
@@ -116,7 +117,7 @@
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(244, 259);
+            this.txtName.Location = new System.Drawing.Point(249, 292);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(137, 26);
             this.txtName.TabIndex = 8;
@@ -137,7 +138,7 @@
             this.dtgBuilding.AllowUserToAddRows = false;
             this.dtgBuilding.BackgroundColor = System.Drawing.Color.White;
             this.dtgBuilding.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgBuilding.Location = new System.Drawing.Point(58, 12);
+            this.dtgBuilding.Location = new System.Drawing.Point(63, 45);
             this.dtgBuilding.Name = "dtgBuilding";
             this.dtgBuilding.Size = new System.Drawing.Size(662, 206);
             this.dtgBuilding.TabIndex = 11;
@@ -148,7 +149,7 @@
             // 
             this.lbID.AutoSize = true;
             this.lbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbID.Location = new System.Drawing.Point(409, 263);
+            this.lbID.Location = new System.Drawing.Point(414, 296);
             this.lbID.Name = "lbID";
             this.lbID.Size = new System.Drawing.Size(27, 24);
             this.lbID.TabIndex = 12;
@@ -157,7 +158,7 @@
             // txtID
             // 
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(549, 259);
+            this.txtID.Location = new System.Drawing.Point(554, 292);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(134, 26);
             this.txtID.TabIndex = 13;
@@ -166,7 +167,7 @@
             // 
             this.lbRoomQuantity.AutoSize = true;
             this.lbRoomQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRoomQuantity.Location = new System.Drawing.Point(409, 227);
+            this.lbRoomQuantity.Location = new System.Drawing.Point(414, 260);
             this.lbRoomQuantity.Name = "lbRoomQuantity";
             this.lbRoomQuantity.Size = new System.Drawing.Size(134, 24);
             this.lbRoomQuantity.TabIndex = 15;
@@ -175,7 +176,7 @@
             // txtRoomQuantity
             // 
             this.txtRoomQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRoomQuantity.Location = new System.Drawing.Point(549, 225);
+            this.txtRoomQuantity.Location = new System.Drawing.Point(554, 258);
             this.txtRoomQuantity.Name = "txtRoomQuantity";
             this.txtRoomQuantity.Size = new System.Drawing.Size(134, 26);
             this.txtRoomQuantity.TabIndex = 16;
@@ -221,11 +222,22 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(358, 349);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "btnFrom";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnUpdate);
@@ -270,6 +282,7 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button button1;
     }
 }
 
