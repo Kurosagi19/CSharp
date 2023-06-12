@@ -128,7 +128,19 @@ namespace Demo15_SchoolManagement
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            btnAdd.Enabled = true;
+            btnSave.Enabled = false;
+            btnCancel.Enabled = false;
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
+            txtRoomID.Enabled = false;
+            txtRoomID.Text = "";
+            txtRoomName.Enabled = false;
+            txtRoomName.Text = "";
+            txtFloor.Enabled = false;
+            txtFloor.Text = "";
+            txtBuildingID.Enabled = false;
+            txtBuildingID.Text = "";
         }
 
         private void btnExit_Click(object sender, EventArgs e)

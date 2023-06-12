@@ -51,7 +51,6 @@ namespace Demo15_SchoolManagement
 
             txtName.Enabled = false;
             txtAddress.Enabled = false;
-            txtRoomQuantity.Enabled = false;
             txtID.Enabled = false;
             btnSave.Enabled = false;
             btnCancel.Enabled = false;
@@ -85,8 +84,6 @@ namespace Demo15_SchoolManagement
             txtAddress.Text = "";
             txtName.Enabled = true;
             txtName.Text = "";
-            txtRoomQuantity.Enabled = true;
-            txtRoomQuantity.Text = "";
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -102,8 +99,6 @@ namespace Demo15_SchoolManagement
             txtName.Text = "";
             txtAddress.Enabled = false;
             txtAddress.Text = "";
-            txtRoomQuantity.Enabled = false;
-            txtRoomQuantity.Text = "";
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -127,7 +122,6 @@ namespace Demo15_SchoolManagement
             txtID.Enabled = false;
             txtAddress.Enabled = false;
             txtName.Enabled = false;
-            txtRoomQuantity.Enabled = false;
 
             if (txtID.Text == "")
             {
@@ -147,7 +141,6 @@ namespace Demo15_SchoolManagement
                 txtID.Text = "";
                 txtName.Text = "";
                 txtAddress.Text = "";
-                txtRoomQuantity.Text = "";
 
                 loadData();
             }
@@ -240,6 +233,16 @@ namespace Demo15_SchoolManagement
             MessageBox.Show("Saved !", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             loadData();
+        }
+
+        private void lbName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

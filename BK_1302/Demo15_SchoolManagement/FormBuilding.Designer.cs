@@ -39,8 +39,6 @@
             this.dtgBuilding = new System.Windows.Forms.DataGridView();
             this.lbID = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.lbRoomQuantity = new System.Windows.Forms.Label();
-            this.txtRoomQuantity = new System.Windows.Forms.TextBox();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,7 +50,7 @@
             // 
             this.lbAddress.AutoSize = true;
             this.lbAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAddress.Location = new System.Drawing.Point(105, 260);
+            this.lbAddress.Location = new System.Drawing.Point(499, 265);
             this.lbAddress.Name = "lbAddress";
             this.lbAddress.Size = new System.Drawing.Size(80, 24);
             this.lbAddress.TabIndex = 1;
@@ -62,7 +60,7 @@
             // txtAddress
             // 
             this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.Location = new System.Drawing.Point(249, 260);
+            this.txtAddress.Location = new System.Drawing.Point(585, 265);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(137, 26);
             this.txtAddress.TabIndex = 2;
@@ -107,19 +105,21 @@
             // 
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(105, 292);
+            this.lbName.Location = new System.Drawing.Point(261, 263);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(61, 24);
             this.lbName.TabIndex = 7;
             this.lbName.Text = "Name";
+            this.lbName.Click += new System.EventHandler(this.lbName_Click);
             // 
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(249, 292);
+            this.txtName.Location = new System.Drawing.Point(328, 263);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(137, 26);
             this.txtName.TabIndex = 8;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // btnDelete
             // 
@@ -148,7 +148,7 @@
             // 
             this.lbID.AutoSize = true;
             this.lbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbID.Location = new System.Drawing.Point(414, 296);
+            this.lbID.Location = new System.Drawing.Point(63, 261);
             this.lbID.Name = "lbID";
             this.lbID.Size = new System.Drawing.Size(27, 24);
             this.lbID.TabIndex = 12;
@@ -157,28 +157,10 @@
             // txtID
             // 
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(554, 292);
+            this.txtID.Location = new System.Drawing.Point(96, 261);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(134, 26);
             this.txtID.TabIndex = 13;
-            // 
-            // lbRoomQuantity
-            // 
-            this.lbRoomQuantity.AutoSize = true;
-            this.lbRoomQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRoomQuantity.Location = new System.Drawing.Point(414, 260);
-            this.lbRoomQuantity.Name = "lbRoomQuantity";
-            this.lbRoomQuantity.Size = new System.Drawing.Size(134, 24);
-            this.lbRoomQuantity.TabIndex = 15;
-            this.lbRoomQuantity.Text = "Room Quantity";
-            // 
-            // txtRoomQuantity
-            // 
-            this.txtRoomQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRoomQuantity.Location = new System.Drawing.Point(554, 258);
-            this.txtRoomQuantity.Name = "txtRoomQuantity";
-            this.txtRoomQuantity.Size = new System.Drawing.Size(134, 26);
-            this.txtRoomQuantity.TabIndex = 16;
             // 
             // btnEdit
             // 
@@ -221,7 +203,7 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // Form1
+            // FormBuilding
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -230,8 +212,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.txtRoomQuantity);
-            this.Controls.Add(this.lbRoomQuantity);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.lbID);
             this.Controls.Add(this.dtgBuilding);
@@ -243,8 +223,8 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.lbAddress);
-            this.Name = "Form1";
-            this.Text = "BKM Management System";
+            this.Name = "FormBuilding";
+            this.Text = "BK Management System";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgBuilding)).EndInit();
             this.ResumeLayout(false);
@@ -264,8 +244,6 @@
         private System.Windows.Forms.DataGridView dtgBuilding;
         private System.Windows.Forms.Label lbID;
         private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.Label lbRoomQuantity;
-        private System.Windows.Forms.TextBox txtRoomQuantity;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label label1;
