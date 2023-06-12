@@ -98,7 +98,38 @@ namespace Demo15_SchoolManagement
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            btnCancel.Enabled = false;
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
 
+            txtRoomName.Enabled = false;
+            txtRoomNumber.Enabled = false;
+            txtFloor.Enabled = false;
+            txtBuildingID.Enabled = false;
+
+            if (txtRoomID.Text == "")
+            {
+                MessageBox.Show("Please input ID");
+            }
+            else
+            {
+                string strCon = "Server = Kurosagi19; Database = ASSIGNMENT; Trusted_Connection = true";
+                SqlConnection con = new SqlConnection(strCon);
+                con.Open();
+
+                string sql = "DELETE FROM building WHERE building_id = " + txtRoomID.Text + "";
+
+                SqlCommand command = new SqlCommand(sql, con);
+                command.ExecuteNonQuery();
+                MessageBox.Show("Deleted !", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                txtRoomName.Text = "";
+                txtRoomNumber.Text = "";
+                txtFloor.Text = "";
+                txtBuildingID.Text = "";
+
+                loadData();
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)

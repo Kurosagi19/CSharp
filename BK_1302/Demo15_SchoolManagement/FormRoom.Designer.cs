@@ -276,7 +276,7 @@
             this.Controls.Add(this.txtRoomName);
             this.Controls.Add(this.lbRoomName);
             this.Name = "FormRoom";
-            this.Text = "MainForm";
+            this.Text = "BK Management System";
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgRoom)).EndInit();
             this.ResumeLayout(false);
