@@ -88,6 +88,7 @@ namespace Demo15_SchoolManagement
 
             btnUpdate.Enabled = true;
             btnCancel.Enabled = true;
+            btnDelete.Enabled = true;
             btnAdd.Enabled = false;
         }
 
@@ -117,6 +118,8 @@ namespace Demo15_SchoolManagement
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            btnAdd.Enabled = true;
+            btnEdit.Enabled = true;
             btnCancel.Enabled = false;
             btnUpdate.Enabled = false;
             btnDelete.Enabled = false;
@@ -136,7 +139,7 @@ namespace Demo15_SchoolManagement
                 SqlConnection con = new SqlConnection(strCon);
                 con.Open();
 
-                string sql = "DELETE FROM building WHERE building_id = " + txtRoomID.Text + "";
+                string sql = "DELETE FROM room WHERE room_id = " + txtRoomID.Text + "";
 
                 SqlCommand command = new SqlCommand(sql, con);
                 command.ExecuteNonQuery();
