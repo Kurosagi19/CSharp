@@ -37,7 +37,6 @@ namespace Demo15_SchoolManagement
             dtgBuilding.Columns[0].HeaderText = "ID";
             dtgBuilding.Columns[1].HeaderText = "Building Name";
             dtgBuilding.Columns[2].HeaderText = "Address";
-            dtgBuilding.Columns[3].HeaderText = "Room Quantity";
 
             // Kích cỡ cột tự động
             dtgBuilding.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -112,7 +111,10 @@ namespace Demo15_SchoolManagement
             DialogResult result = MessageBox.Show("Exit?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
             if (result == DialogResult.Yes)
             {
-                this.Close();
+                this.Hide();
+                var mainForm = new MainForm();
+                mainForm.Closed += (s, args) => this.Close();
+                mainForm.Show();
             }
         }
 
@@ -165,11 +167,9 @@ namespace Demo15_SchoolManagement
                 string ID = row.Cells["building_id"].Value.ToString();
                 string BuildingName = row.Cells["name"].Value.ToString();
                 string Address = row.Cells["address"].Value.ToString();
-                string RoomQuantity = row.Cells["room_quantity"].Value.ToString();
                 txtID.Text = ID;
                 txtName.Text = BuildingName;
                 txtAddress.Text = Address;
-                txtRoomQuantity.Text = RoomQuantity;
             } catch (Exception ex)
             {
 
@@ -193,7 +193,6 @@ namespace Demo15_SchoolManagement
             txtID.Enabled = true;
             txtAddress.Enabled = true;
             txtName.Enabled = true;
-            txtRoomQuantity.Enabled = true;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -205,13 +204,12 @@ namespace Demo15_SchoolManagement
             txtID.Enabled = false;
             txtAddress.Enabled = false;
             txtName.Enabled = false;
-            txtRoomQuantity.Enabled = false;
 
             string strCon = "Server = Kurosagi19; Database = ASSIGNMENT; Trusted_Connection = true";
             SqlConnection con = new SqlConnection(strCon);
             con.Open();
 
-            string sql = $"UPDATE building SET name = '{txtName.Text}', address = '{txtAddress.Text}', room_quantity = {txtRoomQuantity.Text} WHERE building_id = {txtID.Text}";
+            string sql = $"UPDATE building SET building_id = '{txtID.Text}', name = '{txtName.Text}', address = '{txtAddress.Text}' WHERE building_id = {txtID.Text}";
 
             SqlCommand command = new SqlCommand(sql, con);
             command.ExecuteNonQuery();
@@ -230,13 +228,12 @@ namespace Demo15_SchoolManagement
             txtID.Enabled = false;
             txtAddress.Enabled = false;
             txtName.Enabled = false;
-            txtRoomQuantity.Enabled = false;
 
             string strCon = "Server = Kurosagi19; Database = ASSIGNMENT; Trusted_Connection = true";
             SqlConnection con = new SqlConnection(strCon);
             con.Open();
 
-            string sql = "INSERT INTO building (name, address, room_quantity) VALUES ('"+txtName.Text+"', '"+txtAddress.Text+"', '"+txtRoomQuantity.Text+"')";
+            string sql = "INSERT INTO building (building_id, name, address) VALUES ("+ txtID.Text +", '"+txtName.Text+"', '"+txtAddress.Text+"')";
 
             SqlCommand command = new SqlCommand(sql, con);
             command.ExecuteNonQuery();

@@ -36,7 +36,7 @@
             this.lbFloor = new System.Windows.Forms.Label();
             this.txtRoomID = new System.Windows.Forms.TextBox();
             this.lbRoomID = new System.Windows.Forms.Label();
-            this.dtgBuilding = new System.Windows.Forms.DataGridView();
+            this.dtgRoom = new System.Windows.Forms.DataGridView();
             this.btnDelete = new System.Windows.Forms.Button();
             this.txtRoomNumber = new System.Windows.Forms.TextBox();
             this.lbRoomNumber = new System.Windows.Forms.Label();
@@ -47,7 +47,8 @@
             this.lbRoomName = new System.Windows.Forms.Label();
             this.lbBuildingID = new System.Windows.Forms.Label();
             this.txtBuildingID = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgBuilding)).BeginInit();
+            this.btnBuilding = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgRoom)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSave
@@ -127,15 +128,15 @@
             this.lbRoomID.TabIndex = 30;
             this.lbRoomID.Text = "Room ID";
             // 
-            // dtgBuilding
+            // dtgRoom
             // 
-            this.dtgBuilding.AllowUserToAddRows = false;
-            this.dtgBuilding.BackgroundColor = System.Drawing.Color.White;
-            this.dtgBuilding.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgBuilding.Location = new System.Drawing.Point(60, 29);
-            this.dtgBuilding.Name = "dtgBuilding";
-            this.dtgBuilding.Size = new System.Drawing.Size(662, 206);
-            this.dtgBuilding.TabIndex = 29;
+            this.dtgRoom.AllowUserToAddRows = false;
+            this.dtgRoom.BackgroundColor = System.Drawing.Color.White;
+            this.dtgRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgRoom.Location = new System.Drawing.Point(60, 29);
+            this.dtgRoom.Name = "dtgRoom";
+            this.dtgRoom.Size = new System.Drawing.Size(662, 206);
+            this.dtgRoom.TabIndex = 29;
             // 
             // btnDelete
             // 
@@ -237,11 +238,23 @@
             this.txtBuildingID.Size = new System.Drawing.Size(134, 26);
             this.txtBuildingID.TabIndex = 39;
             // 
+            // btnBuilding
+            // 
+            this.btnBuilding.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuilding.Location = new System.Drawing.Point(294, 362);
+            this.btnBuilding.Name = "btnBuilding";
+            this.btnBuilding.Size = new System.Drawing.Size(206, 35);
+            this.btnBuilding.TabIndex = 40;
+            this.btnBuilding.Text = "Building Management";
+            this.btnBuilding.UseVisualStyleBackColor = true;
+            this.btnBuilding.Click += new System.EventHandler(this.btnBuilding_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnBuilding);
             this.Controls.Add(this.txtBuildingID);
             this.Controls.Add(this.lbBuildingID);
             this.Controls.Add(this.btnSave);
@@ -252,7 +265,7 @@
             this.Controls.Add(this.lbFloor);
             this.Controls.Add(this.txtRoomID);
             this.Controls.Add(this.lbRoomID);
-            this.Controls.Add(this.dtgBuilding);
+            this.Controls.Add(this.dtgRoom);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.txtRoomNumber);
             this.Controls.Add(this.lbRoomNumber);
@@ -264,7 +277,7 @@
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgBuilding)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgRoom)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,7 +293,7 @@
         private System.Windows.Forms.Label lbFloor;
         private System.Windows.Forms.TextBox txtRoomID;
         private System.Windows.Forms.Label lbRoomID;
-        private System.Windows.Forms.DataGridView dtgBuilding;
+        private System.Windows.Forms.DataGridView dtgRoom;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.TextBox txtRoomNumber;
         private System.Windows.Forms.Label lbRoomNumber;
@@ -291,5 +304,6 @@
         private System.Windows.Forms.Label lbRoomName;
         private System.Windows.Forms.Label lbBuildingID;
         private System.Windows.Forms.TextBox txtBuildingID;
+        private System.Windows.Forms.Button btnBuilding;
     }
 }
