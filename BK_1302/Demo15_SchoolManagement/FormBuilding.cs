@@ -213,26 +213,36 @@ namespace Demo15_SchoolManagement
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            btnSave.Enabled = false;
-            btnCancel.Enabled = false;
-            btnUpdate.Enabled = false;
-            btnDelete.Enabled = false;
-
-            txtID.Enabled = false;
-            txtAddress.Enabled = false;
-            txtName.Enabled = false;
-
             string strCon = "Server = Kurosagi19; Database = ASSIGNMENT; Trusted_Connection = true";
             SqlConnection con = new SqlConnection(strCon);
             con.Open();
 
-            string sql = "INSERT INTO building (building_id, name, address) VALUES ("+ txtID.Text +", '"+txtName.Text+"', '"+txtAddress.Text+"')";
+            string check = "SELECT top 1 building_id FROM building WHERE building_id = " + txtID.Text + "";
+            SqlCommand cmdCheck = new SqlCommand(check, con);
+            SqlDataReader reader = cmdCheck.ExecuteReader();
+            if (reader.Read())
+            {
+                MessageBox.Show("ID duplicate detected! Please input id again!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                btnSave.Enabled = false;
+                btnCancel.Enabled = false;
+                btnUpdate.Enabled = false;
+                btnDelete.Enabled = false;
 
-            SqlCommand command = new SqlCommand(sql, con);
-            command.ExecuteNonQuery();
-            MessageBox.Show("Saved !", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtID.Enabled = false;
+                txtAddress.Enabled = false;
+                txtName.Enabled = false;
 
-            loadData();
+                string sql = "INSERT INTO building (building_id, name, address) VALUES (" + txtID.Text + ", '" + txtName.Text + "', '" + txtAddress.Text + "')";
+
+                SqlCommand command = new SqlCommand(sql, con);
+                command.ExecuteNonQuery();
+                MessageBox.Show("Saved !", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                loadData();
+            }
         }
 
         private void lbName_Click(object sender, EventArgs e)

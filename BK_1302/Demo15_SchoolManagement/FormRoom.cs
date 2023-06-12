@@ -156,37 +156,27 @@ namespace Demo15_SchoolManagement
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            txtRoomName.Enabled = false;
+            txtRoomNumber.Enabled = false;
+            txtFloor.Enabled = false;
+            txtBuildingID.Enabled = false;
+
+            btnSave.Enabled = false;
+            btnCancel.Enabled = false;
+            btnDelete.Enabled = false;
+            btnUpdate.Enabled = false;
+
             string strCon = "Server = Kurosagi19; Database = ASSIGNMENT; Trusted_Connection = true";
             SqlConnection con = new SqlConnection(strCon);
             con.Open();
 
-            string check = "SELECT top 1 room_id FROM room WHERE room_id = " + txtRoomID.Text + "";
-            SqlCommand cmdCheck = new SqlCommand(check, con);
-            SqlDataReader reader = cmdCheck.ExecuteReader();
-            if (reader.Read())
-            {
-                MessageBox.Show("ID duplicate detected! Please input id again!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                txtRoomName.Enabled = false;
-                txtRoomNumber.Enabled = false;
-                txtFloor.Enabled = false;
-                txtBuildingID.Enabled = false;
+            string sql = "INSERT INTO room (room_name, room_number, floor_number, building_id) VALUES ('" + txtRoomName.Text + "', " + txtRoomNumber.Text + ", " + txtFloor.Text + ", " + txtBuildingID.Text + ")";
 
-                btnSave.Enabled = false;
-                btnCancel.Enabled = false;
-                btnDelete.Enabled = false;
-                btnUpdate.Enabled = false;
+            SqlCommand command = new SqlCommand(sql, con);
+            command.ExecuteNonQuery();
+            MessageBox.Show("Saved !", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                string sql = "INSERT INTO room (room_name, room_number, floor_number, building_id) VALUES ('" + txtRoomName.Text + "', " + txtRoomNumber.Text + ", " + txtFloor.Text + ", " + txtBuildingID.Text + ")";
-
-                SqlCommand command = new SqlCommand(sql, con);
-                command.ExecuteNonQuery();
-                MessageBox.Show("Saved !", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                loadData();
-            }
+            loadData();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
