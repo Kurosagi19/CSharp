@@ -20,5 +20,5 @@ D:\CSharp\BK_1302\Demo15_SchoolManagement\obj\Debug\Demo15_SchoolManagement.cspr
 D:\CSharp\BK_1302\Demo15_SchoolManagement\obj\Debug\Demo15_SchoolManagement.exe
 D:\CSharp\BK_1302\Demo15_SchoolManagement\obj\Debug\Demo15_SchoolManagement.pdb
 D:\CSharp\BK_1302\Demo15_SchoolManagement\obj\Debug\Demo15_SchoolManagement.FormLogin.resources
-D:\CSharp\BK_1302\Demo15_SchoolManagement\obj\Debug\Demo15_SchoolManagement.MainForm.resources
 D:\CSharp\BK_1302\Demo15_SchoolManagement\obj\Debug\Demo15_SchoolManagement.FormBuilding.resources
+D:\CSharp\BK_1302\Demo15_SchoolManagement\obj\Debug\Demo15_SchoolManagement.FormRoom.resources

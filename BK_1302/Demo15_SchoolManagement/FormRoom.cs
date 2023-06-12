@@ -8,12 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Demo15_SchoolManagement
 {
-    public partial class MainForm : Form
+    public partial class FormRoom : Form
     {
-        public MainForm()
+        public FormRoom()
         {
             InitializeComponent();
         }
@@ -80,7 +81,14 @@ namespace Demo15_SchoolManagement
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            txtRoomName.Enabled = true;
+            txtRoomNumber.Enabled = true;
+            txtFloor.Enabled = true;
+            txtBuildingID.Enabled = true;
 
+            btnUpdate.Enabled = true;
+            btnCancel.Enabled = true;
+            btnAdd.Enabled = false;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -95,7 +103,27 @@ namespace Demo15_SchoolManagement
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            txtRoomName.Enabled = false;
+            txtRoomNumber.Enabled = false;
+            txtFloor.Enabled = false;
+            txtBuildingID.Enabled = false;
 
+            btnSave.Enabled = false;
+            btnCancel.Enabled = false;
+            btnDelete.Enabled = false;
+            btnUpdate.Enabled = false;
+
+            string strCon = "Server = Kurosagi19; Database = ASSIGNMENT; Trusted_Connection = true";
+            SqlConnection con = new SqlConnection(strCon);
+            con.Open();
+
+            string sql = "INSERT INTO room (room_name, room_number, floor_number, building_id) VALUES ('"+ txtRoomName.Text +"', "+ txtRoomNumber.Text +", "+ txtFloor.Text +", "+ txtBuildingID.Text +")";
+
+            SqlCommand command = new SqlCommand(sql, con);
+            command.ExecuteNonQuery();
+            MessageBox.Show("Saved !", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            loadData();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -121,6 +149,28 @@ namespace Demo15_SchoolManagement
             var formBuilding = new FormBuilding();
             formBuilding.Closed += (s, args) => this.Close();
             formBuilding.Show();
+        }
+
+        private void dtgRoom_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = this.dtgRoom.SelectedRows[0];
+                string roomID = row.Cells["room_id"].Value.ToString();
+                string roomName = row.Cells["room_name"].Value.ToString();
+                string roomNumber = row.Cells["room_number"].Value.ToString();
+                int floorNumber = Convert.ToInt32(row.Cells["floor_number"].Value.ToString());
+                int buildingID = Convert.ToInt32(row.Cells["building_number"].Value.ToString());
+                txtRoomID.Text = roomID;
+                txtRoomName.Text = roomName;
+                txtRoomNumber.Text = roomNumber;
+                txtFloor.Text = floorNumber.ToString();
+                txtBuildingID.Text = buildingID.ToString();
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
     }
 }

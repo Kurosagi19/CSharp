@@ -1,6 +1,6 @@
 ﻿namespace Demo15_SchoolManagement
 {
-    partial class MainForm
+    partial class FormRoom
     {
         /// <summary>
         /// Required designer variable.
@@ -137,6 +137,7 @@
             this.dtgRoom.Name = "dtgRoom";
             this.dtgRoom.Size = new System.Drawing.Size(662, 206);
             this.dtgRoom.TabIndex = 29;
+            this.dtgRoom.SelectionChanged += new System.EventHandler(this.dtgRoom_SelectionChanged);
             // 
             // btnDelete
             // 
@@ -249,7 +250,7 @@
             this.btnBuilding.UseVisualStyleBackColor = true;
             this.btnBuilding.Click += new System.EventHandler(this.btnBuilding_Click);
             // 
-            // MainForm
+            // FormRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -274,7 +275,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtRoomName);
             this.Controls.Add(this.lbRoomName);
-            this.Name = "MainForm";
+            this.Name = "FormRoom";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgRoom)).EndInit();

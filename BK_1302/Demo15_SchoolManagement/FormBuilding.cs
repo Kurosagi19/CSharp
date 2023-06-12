@@ -112,7 +112,7 @@ namespace Demo15_SchoolManagement
             if (result == DialogResult.Yes)
             {
                 this.Hide();
-                var mainForm = new MainForm();
+                var mainForm = new FormRoom();
                 mainForm.Closed += (s, args) => this.Close();
                 mainForm.Show();
             }

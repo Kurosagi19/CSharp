@@ -41,7 +41,7 @@ namespace Demo15_SchoolManagement
         {
             if (txtUsername.Text == "admin" && txtPassword.Text == "admin") {
                 this.Hide();
-                var mainForm = new MainForm();
+                var mainForm = new FormRoom();
                 mainForm.Closed += (s, args) => this.Close();
                 mainForm.Show();
             } else
