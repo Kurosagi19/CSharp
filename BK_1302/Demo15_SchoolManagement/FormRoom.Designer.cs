@@ -137,6 +137,7 @@
             this.dtgRoom.Name = "dtgRoom";
             this.dtgRoom.Size = new System.Drawing.Size(662, 206);
             this.dtgRoom.TabIndex = 29;
+            this.dtgRoom.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgRoom_CellMouseClick);
             this.dtgRoom.SelectionChanged += new System.EventHandler(this.dtgRoom_SelectionChanged);
             // 
             // btnDelete

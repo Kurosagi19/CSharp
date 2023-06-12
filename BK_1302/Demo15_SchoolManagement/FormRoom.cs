@@ -93,7 +93,26 @@ namespace Demo15_SchoolManagement
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            btnCancel.Enabled = false;
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
 
+            txtRoomName.Enabled = false;
+            txtRoomNumber.Enabled = false;
+            txtFloor.Enabled = false;
+            txtBuildingID.Enabled = false;
+
+            string strCon = "Server = Kurosagi19; Database = ASSIGNMENT; Trusted_Connection = true";
+            SqlConnection con = new SqlConnection(strCon);
+            con.Open();
+
+            string sql = $"UPDATE room SET room_id = '{txtRoomID.Text}', room_name = '{txtRoomName.Text}', room_number = '{txtRoomNumber.Text}', floor_number = '{txtFloor.Text}', building_id = '{txtBuildingID.Text}' WHERE room_id = {txtRoomID.Text}";
+
+            SqlCommand command = new SqlCommand(sql, con);
+            command.ExecuteNonQuery();
+            MessageBox.Show("Updated !", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            loadData();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -202,18 +221,23 @@ namespace Demo15_SchoolManagement
                 string roomID = row.Cells["room_id"].Value.ToString();
                 string roomName = row.Cells["room_name"].Value.ToString();
                 string roomNumber = row.Cells["room_number"].Value.ToString();
-                int floorNumber = Convert.ToInt32(row.Cells["floor_number"].Value.ToString());
-                int buildingID = Convert.ToInt32(row.Cells["building_number"].Value.ToString());
+                string floorNumber = row.Cells["floor_number"].Value.ToString();
+                string buildingID = row.Cells["building_id"].Value.ToString();
                 txtRoomID.Text = roomID;
                 txtRoomName.Text = roomName;
                 txtRoomNumber.Text = roomNumber;
-                txtFloor.Text = floorNumber.ToString();
-                txtBuildingID.Text = buildingID.ToString();
+                txtFloor.Text = floorNumber;
+                txtBuildingID.Text = buildingID;
             }
             catch (Exception ex)
             {
 
             }
+        }
+
+        private void dtgRoom_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            dtgRoom.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
     }
 }
