@@ -106,7 +106,7 @@ namespace Demo15_SchoolManagement
             SqlConnection con = new SqlConnection(strCon);
             con.Open();
 
-            string sql = $"UPDATE room SET room_id = '{txtRoomID.Text}', room_name = '{txtRoomName.Text}', room_number = '{txtRoomNumber.Text}', floor_number = '{txtFloor.Text}', building_id = '{txtBuildingID.Text}' WHERE room_id = {txtRoomID.Text}";
+            string sql = $"UPDATE room SET room_name = '{txtRoomName.Text}', room_number = '{txtRoomNumber.Text}', floor_number = '{txtFloor.Text}', building_id = '{txtBuildingID.Text}' WHERE room_id = {txtRoomID.Text}";
 
             SqlCommand command = new SqlCommand(sql, con);
             command.ExecuteNonQuery();
