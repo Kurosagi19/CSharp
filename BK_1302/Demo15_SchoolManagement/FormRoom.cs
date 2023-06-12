@@ -165,7 +165,7 @@ namespace Demo15_SchoolManagement
             SqlDataReader reader = cmdCheck.ExecuteReader();
             if (reader.Read())
             {
-                MessageBox.Show("ID repeated! Input again!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("ID duplicate detected! Please input id again!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -200,6 +200,8 @@ namespace Demo15_SchoolManagement
             txtRoomID.Text = "";
             txtRoomName.Enabled = false;
             txtRoomName.Text = "";
+            txtRoomNumber.Enabled = false;
+            txtRoomNumber.Text = "";
             txtFloor.Enabled = false;
             txtFloor.Text = "";
             txtBuildingID.Enabled = false;
