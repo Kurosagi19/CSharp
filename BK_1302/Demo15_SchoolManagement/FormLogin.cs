@@ -40,8 +40,10 @@ namespace Demo15_SchoolManagement
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (txtUsername.Text == "admin" && txtPassword.Text == "admin") {
-                Form1 form1 = new Form1();
-                form1.Show();
+                this.Hide();
+                var mainForm = new MainForm();
+                mainForm.Closed += (s, args) => this.Close();
+                mainForm.Show();
             } else
             {
                 MessageBox.Show("Username or Password incorrect !");

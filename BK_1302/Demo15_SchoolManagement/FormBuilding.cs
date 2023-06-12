@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace Demo15_SchoolManagement
 {
-    public partial class Form1 : Form
+    public partial class FormBuilding : Form
     {
-        public Form1()
+        public FormBuilding()
         {
             InitializeComponent();
         }
@@ -243,12 +243,6 @@ namespace Demo15_SchoolManagement
             MessageBox.Show("Saved !", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             loadData();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form2 form2 = new Form2();
-            form2.Show();
         }
     }
 }
