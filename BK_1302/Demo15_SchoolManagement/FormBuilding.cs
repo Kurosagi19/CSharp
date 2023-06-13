@@ -217,15 +217,15 @@ namespace Demo15_SchoolManagement
             SqlConnection con = new SqlConnection(strCon);
             con.Open();
 
-            string check = "SELECT top 1 building_id FROM building WHERE building_id = " + txtID.Text + "";
-            SqlCommand cmdCheck = new SqlCommand(check, con);
-            SqlDataReader reader = cmdCheck.ExecuteReader();
-            if (reader.Read())
-            {
-                MessageBox.Show("ID duplicate detected! Please input id again!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
+            //string check = "SELECT top 1 building_id FROM building WHERE building_id = " + txtID.Text + "";
+            //SqlCommand cmdCheck = new SqlCommand(check, con);
+            //SqlDataReader reader = cmdCheck.ExecuteReader();
+            //if (reader.Read())
+            //{
+            //    MessageBox.Show("ID duplicate detected! Please input id again!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+            //else
+            //{
                 btnSave.Enabled = false;
                 btnCancel.Enabled = false;
                 btnUpdate.Enabled = false;
@@ -242,7 +242,7 @@ namespace Demo15_SchoolManagement
                 MessageBox.Show("Saved !", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 loadData();
-            }
+            //}
         }
 
         private void lbName_Click(object sender, EventArgs e)
